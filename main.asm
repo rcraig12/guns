@@ -1,6 +1,16 @@
+
+#importonce 
+#import "macros.asm"
+#import "sprite.asm"
+
 BasicUpstart2(start)
 
 start:
-  lda #00
+
+  :clearScreen($00)
+  lda #$00
   sta $0500
-  jmp start
+  sta $0502
+  sta $0504
+
+  jmp *
