@@ -1,4 +1,7 @@
 
+#importonce 
+#import "constants.asm"
+
 .macro setBorder(color) {
   lda #color
   sta $d020
@@ -21,4 +24,12 @@
   sta $0700,x
   dex
   bne !loop-
+}
+
+.macro setupSid4Noise() {
+  lda #$ff
+  sta SID_VOICE3_LB
+  sta SID_VOICE3_LB + 1
+  lda #SID_VOICE3_CTRL
+  sta SID_VOICE3_CTRL
 }
