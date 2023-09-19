@@ -6,6 +6,7 @@
   lda #color
   sta $d020
 }
+#importonce 
 
 .macro setBackground(color) {
   lda #color
